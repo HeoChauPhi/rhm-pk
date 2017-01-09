@@ -1,0 +1,60 @@
+# Wordpress Specific
+build/wp-config/wp-config.local.php
+build/wp-content/plugins
+build/wp-content/vendor
+build/wp-content/uploads
+build/db-tool
+build/wp-content/cache/
+
+Gemfile.lock
+Vagrantfile
+composer.lock
+
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.env
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# OS or Editor folders
+.DS_Store
+.cache
+.project
+.settings
+.tmproj
+nbproject
+Thumbs.db
+
+# Dreamweaver added files
+_notes
+dwsync.xml
+
+# Komodo
+*.komodoproject
+.komodotools
+
+# Folders to ignore
+node_modules
+bower_components
+.hg
+.svn
+.CVS
+intermediate
+publish
+.idea
+.vagrant
+
+# build script local files
+build/buildinfo.properties
+build/config/buildinfo.properties
+
+# DevOps
+build/reinstall.yml
+build/devops

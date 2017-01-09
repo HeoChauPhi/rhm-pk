@@ -1,0 +1,39 @@
+{
+  "name": "eskf",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields",
+        "type": "wordpress-plugin",
+        "version": "5.5.2",
+        "dist": {
+          "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9NDcwMDB8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTEyLTMwIDE5OjAxOjU1&t=5.5.2",
+          "type": "zip"
+        },
+        "require": {
+          "composer/installers": "~1.0"
+        }
+      }
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "build/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "build/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "vendor-dir": "build/wp-content/vendor"
+  },
+  "require": {
+    "advanced-custom-fields": "5.5.2",
+    "timber/timber": "~1.0"
+  }
+}

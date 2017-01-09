@@ -1,0 +1,19 @@
+{% block header %}
+  <header id="header" class="header clearfix bg--gradient-red">
+    <div class="container-wide">
+      <div class="header__logo">
+        {% if function('has_custom_logo') %}
+          {{function('the_custom_logo')}}
+        {% else %}
+          <a href="{{ site.url }}">
+            <img alt="{{ site.name }}" class="site-logo" src="{{ site_logo }}" alt="{{ site.name }}">
+          </a>
+        {% endif %}
+      </div>
+
+      {% block navigation %}
+      {% include 'navigation.twig' %}
+      {% endblock %}
+    </div>
+  </header>
+{% endblock %}

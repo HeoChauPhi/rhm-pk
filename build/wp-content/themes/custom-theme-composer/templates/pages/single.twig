@@ -1,0 +1,17 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+  {% for post in posts %}
+    {% include ["single-"~post.post_name~".twig", "single-"~post.post_type~".twig", 'tease.twig'] %}
+  {% endfor %}
+{% endblock %}
+
+{% block aside %}
+  {% for post in posts %}
+    {% if post.post_type == 'news' %}
+    {% include 'sidebar-menu.twig' %}
+    {% else %}
+    {{ sidebar('sidebar-1') }}
+    {% endif %}
+  {% endfor %}
+{% endblock %}

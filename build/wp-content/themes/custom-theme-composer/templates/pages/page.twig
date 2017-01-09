@@ -1,0 +1,32 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+  {% if title_option != "on" %}
+    {% if post.title %}
+    <h1 id="page-title">
+      {{ post.title }}
+    </h1>
+    {% endif %}
+  {% endif %}
+
+  {% for post in posts %}
+    {% if not function('is_page') %}
+      <h3 class="post-title"><a href="{{ post.link }}">{{ post.title }}</a></h3>
+    {% endif %}
+    {{  post.post_content|shortcodes }}
+    {{ flexible_content('view_component') }}
+  {% endfor %}
+
+  {% if function('comments_open') %}
+  {% include 'comments.twig' %}
+  {{ function('comment_form') }}
+  {% endif %}
+
+{% endblock %}
+
+{% block aside %}
+  {{ sidebar(sidebar_left) }}
+  {% if sidebar_menu %}
+    {% include 'sidebar-menu.twig' %}
+  {% endif %}
+{% endblock %}

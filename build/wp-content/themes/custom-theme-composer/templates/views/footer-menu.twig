@@ -1,0 +1,7 @@
+{% if menu.footer %}
+<div class="nav-footer hide-all-device">
+  <ul class="nav-footer__menu">
+    {% include 'menu.twig' with {'menu': menu.footer} %}
+  </ul>
+</div>
+{% endif %}

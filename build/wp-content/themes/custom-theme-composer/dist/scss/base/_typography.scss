@@ -1,0 +1,204 @@
+// TYPOGRAPHY
+// Define all typographic styles in this file.
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: rem(45px);
+
+  @include susy-media(tablet) {
+    font-size: rem(64px);
+  }
+}
+
+h2 {
+  font-size: rem(35px);
+
+  @include susy-media(tablet) {
+    font-size: rem(48px);
+  }
+}
+
+h3 {
+  font-size: rem(30px);
+  line-height: 1.6;
+}
+
+h4 {
+  font-size: rem(24px);
+}
+
+h5 {
+  font-size: rem(18px);
+}
+
+h6 {
+  font-size: rem(15px);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+p {
+  margin-bottom: rem(30px);
+}
+
+a {
+  color: $link-color;
+  outline: none;
+  text-decoration: none;
+
+  &:focus,
+  &:visited {
+    color: $primary-color;
+  }
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  &:active {
+    color: $primary-color;
+  }
+}
+
+.link {
+  // Use on background
+  &--white {
+    color: $white;
+
+    &:focus,
+    &:visited {
+    }
+
+    &:hover,
+    &:active {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  &--underline {
+    border-style: solid;
+    border-width: rem(0 0 1px);
+    padding-bottom: rem(3px);
+  }
+}
+
+label {
+  display: block;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: rem(32px);
+}
+
+h5,
+h6 {
+  margin-bottom: rem(20px);
+}
+
+hr {
+  margin: rem(30px) 0;
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background-color: $border-color;
+}
+
+%section-title,
+.section-title {
+  margin-bottom: rem(30px);
+  margin-top: 0;
+  text-align: center;
+  text-transform: capitalize;
+
+  @include susy-media(tablet) {
+    margin-bottom: rem(41px);
+  }
+
+  @include susy-media(desktop) {
+    margin-bottom: rem(61px);
+  }
+
+  &.has-description {
+    margin-bottom: rem(15px);
+
+    @include susy-media(tablet) {
+      margin-bottom: rem(42px);
+    }
+  }
+}
+
+%section-description,
+.section-description {
+  font-size: rem(20px);
+  line-height: rem(27px);
+  margin-bottom: rem(40px);
+  text-align: center;
+
+  @include susy-media(tablet) {
+    font-size: rem(24px);
+    line-height: rem(40px);
+    margin-bottom: rem(88px);
+  }
+
+  @include susy-media(desktop) {
+    @include pad(2 of $susy-desktop);
+  }
+}
+
+%title-border-bottom,
+.title-border-bottom {
+  border-bottom: rem(1px) solid $border-color;
+  font-size: rem(28px);
+  margin-bottom: rem(20px);
+  margin-top: 0;
+  padding-bottom: rem(16px);
+
+  @include susy-media(tablet) {
+    font-size: rem(30px);
+  }
+
+  i {
+    font-size: rem(23px);
+  }
+}
+
+#page-title {
+  font-size: rem(30px);
+  margin-bottom: rem(13px);
+  margin-top: 0;
+  text-transform: capitalize;
+
+  @include susy-media(tablet) {
+    font-size: rem(64px);
+  }
+}
+
+.info-page {
+  padding-bottom: rem(30px);
+  border-bottom: 1px solid $border-color;
+  margin-bottom: rem(30px);
+
+  @include susy-media(tablet) {
+    padding-bottom: rem(40px);
+    margin-bottom: rem(40px);
+  }
+
+  @include susy-media(desktop) {
+    padding-bottom: rem(50px);
+    margin-bottom: rem(50px);
+  }
+}
+

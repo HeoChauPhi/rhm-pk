@@ -1,0 +1,32 @@
+{% if pagedtype == 'ajax' %}
+  {% if pagination.pages %}
+    <div class="tool-pagination ajax-pagination">
+      <ul class="pager">
+        {% for page in pagination.pages %}
+          {% if page.current == 1 %}
+            {% set current_class = 'pager-current' %}
+          {% endif %}
+          <li class="pager-item {{page.class}}" data-value="{{ page.title }}">
+            <a class="{{page.class}}">{{page.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+{% else %}
+  {% if pagination.pages %}
+    <div class="tool-pagination">
+      <ul class="pager">
+        {% for page in pagination.pages %}
+          {% if page.link %}
+          <li class="pager-item {{page.class}} ">
+              <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+          </li>
+          {% else %}
+            <li class="pager-current {{page.class}}">{{page.title}}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+{% endif %}

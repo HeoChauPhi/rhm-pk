@@ -1,0 +1,206 @@
+// Susy grid.
+$debug: false; // Set true to show the grid.
+$show-image: 'hide';
+
+@if $debug == false {
+  $show-image: 'hide';
+} @else {
+  $show-image: 'show';
+}
+
+// Grid definition for all breakpoints. Use http://gridcalculator.dk/#/1200/12/52/20 to generate the grid.
+$susy: (
+  flow: ltr,
+  math: fluid,
+  container-position: rem($container-margin),
+  container: auto,
+  columns: $column-mobile,
+  gutters: 15px / 44px,
+  column-width: false,
+  debug: (
+    image: $show-image,
+    color: rgba($black, .25),
+    output: background,
+    toggle: top right,
+  )
+);
+
+$susy-tablet: (
+  container-position: rem($container-margin),
+  container: auto,
+  columns: $column-tablet,
+  gutters: 38px / 59px,
+  column-width: false,
+  debug: (
+    image: $show-image,
+    color: rgba($gray, .25),
+    output: background,
+    toggle: top right,
+  ),
+);
+
+$susy-desktop: (
+  columns: $column-desktop,
+  gutters: 36px / 62px,
+  container-position: rem($container-margin),
+  container: auto,
+  debug: (
+    image: $show-image,
+    color: rgba($silver, .25),
+    output: background,
+    toggle: top right,
+  ),
+);
+
+$susy-desktop-medium: (
+  columns: $column-desktop,
+  gutters: 36px / 62px,
+  container-position: rem($container-margin),
+  container: rem($container-desktop),
+  debug: (
+    image: $show-image,
+    color: rgba($silver, .25),
+    output: background,
+    toggle: top right,
+  ),
+);
+
+$susy-desktop-wide: (
+  columns: $column-desktop,
+  gutters: 36px / 62px,
+  container-position: auto,
+  container: rem($container-desktop-wide),
+  debug: (
+    image: $show-image,
+    color: rgba($silver, .25),
+    output: background,
+    toggle: top right,
+  ),
+);
+
+// Pick specific breakpoint.
+$susy-media: (
+  // max-width: 479px
+  mobiletinyOnly: (
+    media: screen,
+    max-width: em($mobile-landscape - 1) * 1em,
+  ),
+
+  //max-width: 640px
+  mobileLargeOnly: (
+    media: screen,
+    max-width: em($mobile-large - 1) * 1em,
+  ),
+
+  // max-width: 768px
+  mobileOnly: (
+    media: screen,
+    max-width: em($tablet - 1) * 1em,
+  ),
+
+  // max-width: 959px
+  mobileTabletLandscapeOnly: (
+    media: screen,
+    max-width: em($tablet-landscape - 1) * 1em,
+  ),
+
+  // max-width: 1180px
+  mobileTabletOnly: (
+    media: screen,
+    max-width: em($desktop - 1) * 1em,
+  ),
+
+  // min-width: 480px
+  mobileLandscape: em($mobile-landscape) * 1em,
+
+   //min-width: 640px
+  mobileLarge: (
+    media: screen,
+    min-width: em($mobile-large) * 1em,
+  ),
+
+  //min-width:480px and max-width: 768px
+  mobileLandscapeOnly: (
+    media: screen,
+    min-width: em($mobile-landscape) * 1em,
+    max-width: em($tablet - 1) * 1em,
+  ),
+
+   //min-width:768px and max-width: 960px
+  tabletSmallOnly: (
+    media: screen,
+    min-width: em($tablet) * 1em,
+    max-width: em($tablet-landscape - 1) * 1em,
+  ),
+
+  // min-width: 768px and max-width: 1180px
+  tabletOnly: (
+    media: screen,
+    min-width: em($tablet) * 1em,
+    max-width: em($desktop - 1) * 1em,
+  ),
+
+  // min-width: 768px and max-width: 1480px
+  tabletLarge: (
+    media: screen,
+    min-width: em($tablet) * 1em,
+    max-width: em($desktop-wide - 1) * 1em,
+  ),
+
+  // min-width: 768px
+  tablet: em($tablet) * 1em,
+
+  // min-width: 960px
+  tabletLandscape: em($tablet-landscape) * 1em,
+
+  // min-width: 1180px
+  desktop: em($desktop) * 1em,
+
+  // min-width: 1260px
+  desktop-wide: em($desktop-wide) * 1em,
+
+  // min-width: 1480px
+  desktop-superwide: em($desktop-superwide) * 1em,
+
+  // min-width: 1320px
+  desktop-superwide1: em($desktop-superwide1) * 1em,
+);
+
+
+.container {
+  @include container();
+
+  @include susy-media(tablet) {
+    @include container($susy-tablet);
+  }
+
+  @include susy-media(desktop) {
+    @include container($susy-desktop);
+  }
+}
+
+.container-wide {
+  @include container();
+
+  @include susy-media(tablet) {
+    @include container($susy-tablet);
+  }
+
+  @include susy-media(desktop) {
+    @include container($susy-desktop);
+  }
+
+  @include susy-media(desktop-wide) {
+    @include container($susy-desktop-medium);
+  }
+
+  @include susy-media(desktop-superwide1) {
+    @include container($susy-desktop-medium);
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  @include susy-media(desktop-superwide) {
+    @include container($susy-desktop-wide);
+  }
+}

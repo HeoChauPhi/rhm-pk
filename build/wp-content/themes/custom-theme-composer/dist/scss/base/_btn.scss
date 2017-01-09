@@ -1,0 +1,12 @@
+// Button
+.btn {
+  color: $primary-color;
+  &,
+  &:focus,
+  &:visited {
+  }
+
+  &:active,
+  &:hover {
+  }
+}

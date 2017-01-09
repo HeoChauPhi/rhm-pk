@@ -1,0 +1,48 @@
+button,
+input[type='submit'] {
+  @extend .btn;
+}
+
+.form-actions {
+  text-align: right;
+}
+
+.form-textarea,
+.form-text {
+
+  &::-ms-clear {
+    display: none;
+  }
+
+  &.focused,
+  &:focus {
+  }
+}
+
+.form-text {
+
+  &.error {
+  }
+
+  &.success {
+  }
+}
+
+/* searchform */
+#searchform {
+  input {
+  }
+
+  .button {
+  }
+}
+
+.ajax-load-icon {
+  background-size: cover;
+  background: url($image-path + 'fancybox_loading.gif') no-repeat scroll center center transparent;
+  height: rem(24px);
+  line-height: rem(24px);
+  margin: rem(20px) auto;
+  text-indent: rem(-9999px);
+  width: rem(24px);
+}
