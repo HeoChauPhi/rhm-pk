@@ -58,3 +58,4 @@ build/config/buildinfo.properties
 # DevOps
 build/reinstall.yml
 build/devops
+pantheon-site/.pantheon

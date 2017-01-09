@@ -34,6 +34,8 @@
   },
   "require": {
     "advanced-custom-fields": "5.5.2",
-    "timber/timber": "~1.0"
+    "timber/timber": "~1.0",
+    "wpackagist-plugin/contact-form-7" : "4.6",
+    "wpackagist-plugin/tinymce-advanced" : "4.4.3"
   }
 }
