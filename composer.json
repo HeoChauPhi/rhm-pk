@@ -10,9 +10,9 @@
       "package": {
         "name": "advanced-custom-fields",
         "type": "wordpress-plugin",
-        "version": "5.5.2",
+        "version": "5.5.3",
         "dist": {
-          "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9NDcwMDB8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTEyLTMwIDE5OjAxOjU1&t=5.5.2",
+          "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9NDcwMDB8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTEyLTMwIDE5OjAxOjU1&t=5.5.3",
           "type": "zip"
         },
         "require": {
@@ -33,7 +33,7 @@
     "vendor-dir": "build/wp-content/vendor"
   },
   "require": {
-    "advanced-custom-fields": "5.5.2",
+    "advanced-custom-fields": "5.5.3",
     "timber/timber": "~1.0",
     "wpackagist-plugin/contact-form-7" : "4.6",
     "wpackagist-plugin/tinymce-advanced" : "4.4.3"
